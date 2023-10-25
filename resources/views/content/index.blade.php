@@ -43,7 +43,7 @@
                                         <div class="card-header">
                                             <h3 class="card-title mb-0">Report Filter</h3>
                                         </div>
-                                        <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 41vh;">
+                                        <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 50vh;">
                                             <div class="container p-0 align-items-center">
                                                 <form id="formSubmit">
                                                     <div class="form-group row">
@@ -91,7 +91,7 @@
                                         <div class="card-header">
                                             <h3 class="card-title mb-0">Report Resume</h3>
                                         </div>
-                                        <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 41vh;">
+                                        <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 50vh;">
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-lg d-flex align-items-center justify-content-center">

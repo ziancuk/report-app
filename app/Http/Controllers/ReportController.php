@@ -20,6 +20,15 @@ class ReportController extends Controller
         if ($request->start_date && $request->end_date) {
             $report->whereBetween('transaction_time', [$request->start_date  . ' 00:00:00', $request->end_date . ' 23:59:59']); 
         }
+
+        if ($request->start_date && !$request->end_date) {
+            $report->where('transaction_time', '>', $request->start_date  . ' 00:00:00'); 
+        }
+
+        if (!$request->start_date && $request->end_date) {
+            $report->where('transaction_time', '<', $request->end_date  . ' 00:00:00'); 
+        }
+
         if ($request->merchant) {
             $report->whereHas('business', function ($query) use ($request) {
                 $query->where('merchant_name', 'like', '%' . $request->merchant . '%');
@@ -71,6 +80,13 @@ class ReportController extends Controller
         $report = Report::with('business', 'user');
         if ($request->start_date && $request->end_date) {
             $report->whereBetween('transaction_time', [$request->start_date  . ' 00:00:00', $request->end_date . ' 23:59:59']); 
+        }
+        if ($request->start_date && !$request->end_date) {
+            $report->where('transaction_time', '>', $request->start_date  . ' 00:00:00'); 
+        }
+
+        if (!$request->start_date && $request->end_date) {
+            $report->where('transaction_time', '<', $request->end_date  . ' 00:00:00'); 
         }
         if ($request->merchant) {
             $report->whereHas('business', function ($query) use ($request) {
